@@ -1,4 +1,6 @@
-{% from "salt/map.jinja" import salt_settings with context %}
+{%- set tplroot = tpldir.split('/')[0] %}
+{%- from tplroot ~ "/map.jinja" import salt_settings with context %}
+{%- from tplroot ~ "/libtofs.jinja" import files_switch with context %}
 
 {% if salt_settings.install_packages and grains.os == 'MacOS' and salt_settings.salt_minion_pkg_source != '' and salt_settings.version != '' %}
 {# only download IF we know where to get the pkg from and if we know what version to check the current install (if installed) against #}
@@ -31,22 +33,34 @@ salt-minion:
     {# use force == True as workaround #}
     - force: True
     - version_check: /opt/salt/bin/salt-minion --version=.*{{ salt_settings.version }}.*
+    - require_in:
+      - service: salt-minion
   {%- else %}
   pkg.installed:
     - name: {{ salt_settings.salt_minion }}
   {%- if salt_settings.version is defined %}
     - version: {{ salt_settings.version }}
   {%- endif %}
+    - require_in:
+      - service: salt-minion
   {%- endif %}
 {% endif %}
   file.recurse:
     - name: {{ salt_settings.config_path }}/minion.d
+    {%- if salt_settings.minion_config_use_TOFS %}
+    - template: ''
+    - source: {{ files_switch(['minion.d'],
+                              lookup='salt-minion'
+                 )
+              }}
+    {%- else %}
     - template: jinja
     - source: salt://{{ slspath }}/files/minion.d
-    - clean: {{ salt_settings.clean_config_d_dir }}
-    - exclude_pat: _*
     - context:
         standalone: False
+    {%- endif %}
+    - clean: {{ salt_settings.clean_config_d_dir }}
+    - exclude_pat: _*
   service.running:
     - enable: True
     - name: {{ salt_settings.minion_service }}
