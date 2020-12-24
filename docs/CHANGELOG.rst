@@ -2,6 +2,66 @@
 Changelog
 =========
 
+`1.7.3 <https://github.com/saltstack-formulas/salt-formula/compare/v1.7.2...v1.7.3>`_ (2020-12-23)
+------------------------------------------------------------------------------------------------------
+
+Tests
+^^^^^
+
+
+* **_mapdata:** generate verification files (\ `da6d150 <https://github.com/saltstack-formulas/salt-formula/commit/da6d1509fd12029edaf907f887071e3604aa0a0a>`_\ )
+* **map:** verify ``map.jinja`` dump using ``_mapdata`` state (\ `d2404d5 <https://github.com/saltstack-formulas/salt-formula/commit/d2404d5175bdc01f532032c82a4891e2f5d070cc>`_\ )
+
+`1.7.2 <https://github.com/saltstack-formulas/salt-formula/compare/v1.7.1...v1.7.2>`_ (2020-12-20)
+------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **commitlint:** ensure ``upstream/master`` uses main repo URL [skip ci] (\ `2a5b679 <https://github.com/saltstack-formulas/salt-formula/commit/2a5b6798d4a0c31f74d849f3f9df13a9cf29b9da>`_\ )
+* **gitlab-ci:** add ``rubocop`` linter (with ``allow_failure``\ ) [skip ci] (\ `8417653 <https://github.com/saltstack-formulas/salt-formula/commit/8417653525c62e30493b2788e0c9ab6224ffe4af>`_\ )
+* **kitchen+gitlab:** adjust matrix to add ``3002`` (\ `7df2445 <https://github.com/saltstack-formulas/salt-formula/commit/7df24454812c6bbd48a9c07c877efba4df194852>`_\ )
+
+Tests
+^^^^^
+
+
+* **magnesium:** add pillar and tests for ``3002`` (\ `c066060 <https://github.com/saltstack-formulas/salt-formula/commit/c0660608d7780483f0c1ebdd57b0873c3d62cb56>`_\ )
+
+`1.7.1 <https://github.com/saltstack-formulas/salt-formula/compare/v1.7.0...v1.7.1>`_ (2020-12-16)
+------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **gitlab-ci:** use GitLab CI as Travis CI replacement (\ `c9b2cb4 <https://github.com/saltstack-formulas/salt-formula/commit/c9b2cb4a4a3562b80c84450284fdfa818d3620bc>`_\ )
+
+Tests
+^^^^^
+
+
+* **fluorine:** remove pillar and tests for ``2019.2`` (\ `75ccf59 <https://github.com/saltstack-formulas/salt-formula/commit/75ccf591eb20567464a306616e13c5d473af0b4e>`_\ )
+* **pkgs_spec:** test for major version only (i.e. ``3000``\ ) (\ `618f95a <https://github.com/saltstack-formulas/salt-formula/commit/618f95a6653adab4c7121cddd13ea2d128b337a4>`_\ )
+
+`1.7.0 <https://github.com/saltstack-formulas/salt-formula/compare/v1.6.0...v1.7.0>`_ (2020-10-12)
+------------------------------------------------------------------------------------------------------
+
+Continuous Integration
+^^^^^^^^^^^^^^^^^^^^^^
+
+
+* **pre-commit:** add to formula [skip ci] (\ `7ff962e <https://github.com/saltstack-formulas/salt-formula/commit/7ff962e2addd97e84dd99c87351b1412f64134af>`_\ )
+* **pre-commit:** enable/disable ``rstcheck`` as relevant [skip ci] (\ `426b29c <https://github.com/saltstack-formulas/salt-formula/commit/426b29c21149f5cef9064177177891a091c6bb82>`_\ )
+* **pre-commit:** finalise ``rstcheck`` configuration [skip ci] (\ `22fa616 <https://github.com/saltstack-formulas/salt-formula/commit/22fa616f59864a77e3f7ea5b17e8a7f0bcf415be>`_\ )
+
+Features
+^^^^^^^^
+
+
+* add Gentoo support (\ `127c5d7 <https://github.com/saltstack-formulas/salt-formula/commit/127c5d779b1e2b9beb7322a2d03a027c50e5c6d7>`_\ )
+
 `1.6.0 <https://github.com/saltstack-formulas/salt-formula/compare/v1.5.2...v1.6.0>`_ (2020-09-20)
 ------------------------------------------------------------------------------------------------------
 

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 # vim: ft=yaml
 ---
-name: v201902-py3
-title: salt formula
+name: share
+title: InSpec shared resources
 maintainer: SaltStack Formulas
 license: Apache-2.0
-summary: Verify that Salt `v201902-py3` is setup and configured
+summary: shared resources
 supports:
   - platform-name: debian
   - platform-name: ubuntu
@@ -17,3 +17,5 @@ supports:
   - platform-name: amazon
   - platform-name: oracle
   - platform-name: arch
+  - platform-name: gentoo
+  - platform: windows

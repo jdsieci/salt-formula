@@ -3,7 +3,7 @@
 control 'salt packages' do
   title 'should be installed'
 
-  version = '2019.2.5'
+  version = '3002'
 
   %w[
     salt-master
